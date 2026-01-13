@@ -2,10 +2,28 @@ const Luchador = require("./Luchador")
 const Empresa = require("./Empresa")
 const Servicio = require ("./Servicio")
 //Empresas------------------------------------------------------------------------------------
-const em1 = new Empresa(1, "WWE", "Estados Unidos", []);
-const em2 = new Empresa(2, "AAA", "Mexico", []);
-const em3 = new Empresa(3, "CMLL", "Mexico", []);
-const em4 = new Empresa(4, "NXT", "Estados Unidos", []);
+const em1 = new Empresa({
+    idEmpresa:1,
+nombreEmpresa: "WWE",
+paisEmpresa: "Estados Unidos",
+luchadoresContratados:[]})
+
+const em2 = new Empresa({
+    idEmpresa:2,
+    nombreEmpresa: "AAA",
+    paisEmpresa: "Mexico",
+    luchadoresContratados:[]
+})
+const em3 = new Empresa({ idEmpresa:3,
+    nombreEmpresa: "CMLL",
+    paisEmpresa: "Mexico",
+    luchadoresContratados:[]})
+const em4 = new Empresa({
+    idEmpresa:4,
+    nombreEmpresa: "NXT",
+    paisEmpresa: "Estados Unidos",
+    luchadoresContratados:[]
+})
 
 //Guardando a las empresas
 Servicio.guardarDatos(em1);
@@ -14,6 +32,7 @@ Servicio.guardarDatos(em3);
 Servicio.guardarDatos(em4);
 
 //Luchadores----------------------------------------------------------------------------------
+//-------------------WWE
 const l1 = new Luchador({
     idLuchador: 1,
     nombreLuchador: "El Grande Americano",
@@ -26,7 +45,7 @@ const l1 = new Luchador({
 
 const l2 = new Luchador({
     idLuchador: 2,
-    nombreLuchador: "Misitico",
+    nombreLuchador: "Mistico",
     empresaContrato: "CMLL",
     nacionalidad: "Mexicano",
     rivales: ["El Difunto", "Mascara Dorada", "Atlantis"],
@@ -106,7 +125,7 @@ const l9 = new Luchador({
 
 const l10 = new Luchador({
     idLuchador: 10,
-    nombreLuchador: "Penta",
+    nombreLuchador: "Penta OM",
     empresaContrato: "WWE",
     nacionalidad: "Mexicano",
     rivales: ["Dominik", "Rusell", "AJ Styles"],
@@ -117,7 +136,7 @@ const l10 = new Luchador({
 const l11 = new Luchador({
     idLuchador: 11,
     nombreLuchador: "Dominik MIstierio",
-    empresaContrato: "WEE",
+    empresaContrato: "WWE",
     nacionalidad: "Estados Unidos",
     rivales: ["Dragon Lee", "AJ Styles", "Hijo Del Vikingo"],
     facebbok: "DM Oficial Facebook",
@@ -127,7 +146,7 @@ const l11 = new Luchador({
 const l12 = new Luchador({
     idLuchador: 12,
     nombreLuchador: "Dragon Lee",
-    empresaContrato: "WEE",
+    empresaContrato: "WWE",
     nacionalidad: "Mexicano",
     rivales: ["Axiom", "AJ Styles", "Hijo Del Vikingo"],
     facebbok: "D Lee Oficial Facebook",
@@ -137,7 +156,7 @@ const l12 = new Luchador({
 const l13 = new Luchador({
     idLuchador: 13,
     nombreLuchador: "Rey Misterio",
-    empresaContrato: "WEE",
+    empresaContrato: "WWE",
     nacionalidad: "Estados Unidos",
     rivales: ["Dragon Lee", "AJ Styles", "Hijo Del Vikingo"],
     facebbok: "Rey Misterio Oficial Facebook",
@@ -197,10 +216,16 @@ const l16 = new Luchador({
 const em5 = new Empresa(5, "NXT", "Estados Unidos", []);
 //Servicio.guardarDatos(em5);
 //---------------------------------------------------------------------------------------------------------
-//Menu Principal
-//Opcion 1 - Mostrar luchadores registrados
-//Opcion 2 - Mostrar empresas registraas
-//Opcion 3 - Mostrar luchadores por empresa
-//Opcion 4 - Eliminar luchador o empresa
-Servicio.luchadorPorEmpresa("AAA")
+// Menu Principal
+// Opcion 1 - Mostrar luchadores registrados
+// Opcion 2 - Mostrar empresas registraas
+// - Mostrar luchadores por empresa (AAA - NXT - CMLL - WWE)
+// - Eliminar luchador o empresa
 
+
+
+
+
+//Servicio.luchadorPorEmpresa("CMLL")
+Servicio.eliminarDatos("Atlantis", false)
+//Servicio.motrarDatos(1)
