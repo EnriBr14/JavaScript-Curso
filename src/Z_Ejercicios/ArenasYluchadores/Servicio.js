@@ -144,7 +144,24 @@ function motrarDatos(opcion){
 
         //Buscar empresa para eliminarla
         else{
+            let empresaEliminar = empresaORluchador
+            let eliminarEmpresa = empresas.some(empres => empres.getNombreEmpresa() === empresaEliminar);
 
+            if(eliminarEmpresa){
+                console.log(`
+            Empresa que deseas eliminar es: ${empresaEliminar}
+            `)
+                if(confirm){
+                    let indexEmpresa = empresas.findIndex(empres => empres.getNombreEmpresa() === empresaEliminar)
+                    empresas.splice(indexEmpresa, 1)
+                    console.log("Empresa eliminada")
+                    setTimeout(() =>{
+                        fs.writeFileSync('RegistroEmpresas.txt', JSON.stringify(empresas, null, 4))
+                         motrarDatos(2)
+                    },1500)
+                }
+
+            }
         }
     }
 

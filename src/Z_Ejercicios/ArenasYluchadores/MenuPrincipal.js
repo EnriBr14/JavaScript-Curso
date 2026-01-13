@@ -227,5 +227,5 @@ const em5 = new Empresa(5, "NXT", "Estados Unidos", []);
 
 
 //Servicio.luchadorPorEmpresa("CMLL")
-Servicio.eliminarDatos("Atlantis", false)
+Servicio.eliminarDatos("WWE", true)
 //Servicio.motrarDatos(1)
